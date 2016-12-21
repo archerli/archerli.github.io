@@ -26,8 +26,12 @@ github_username:  archerli
 
 # Build settings
 markdown: kramdown
+<<<<<<< HEAD
 permalink: /:title
 theme: minima
+=======
+theme: jekyll-theme-cayman
+>>>>>>> de94b2d2aaa1b304ae66cfb0a85a5233ec78add8
 gems:
   - jekyll-feed
 exclude:
