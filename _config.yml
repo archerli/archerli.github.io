@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until next variable
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
-email: liyaqingatamoi#gmail.com (Change # to @)
+email: liyaqingatamoi@gmail.com
 
 baseurl: "" # the subpath of your site, e.g. /blog
 
@@ -31,9 +31,8 @@ github_username:  archerli
 linkedin_username: liyaqing
 
 # Build settings
-#markdown: kramdown
-permalink: /year/month/day/:title
-#/:title
+markdown: kramdown
+permalink: /:title
 theme: minima
 
 highlighter: pygments
