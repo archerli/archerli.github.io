@@ -33,7 +33,7 @@ linkedin_username: liyaqing
 # Build settings
 markdown: kramdown
 permalink: /:title
-theme: minima
+theme: yilia
 
 highlighter: rouge
 excerpt_separator: "\n\n"
