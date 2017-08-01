@@ -13,50 +13,51 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+# Site title
 title: Welcome to visits Archer's blog
+#Site description
 description: > # this means to ignore newlines until next variable
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 
-email: liyaqingatamoi@gmail.com
-
+#baseurl: 网站根路径
 baseurl: "" # the subpath of your site, e.g. /blog
-
+#Host page url
 url: "https://archerli.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+#Jekyll Build configuration
 
-twitter_username: archerli
+source: _posts
+#从 _posts 目录中读取数据
+
+destination: _site
+#将生成的文件写入到 _site 目录中
+
+include: ['.htaccess', '_includes']
+
+
+#联系人信息
+email: liyaqingatamoi@gmail.com
+author: archerli
 github_username:  archerli
-
-linkedin_username: liyaqing
 
 # Build settings
 markdown: kramdown
-permalink: /:title
+#permalink: 配置文章的永久链接
+#permalink: date 表示 permalink: /:categories/:year/:month/:day/:title.html
+permalink: /blog/:categories/:year/:month/:day/:title.html
+paginate: 10
+
+#主题样式
 theme: minima
 
 highlighter: rouge
 excerpt_separator: "\n\n"
-kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
+  
+analytics:
+    google:
+    tracking_id: UA-80557370-2
 
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
+gems: ['jekyll-feed']
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
-
-#theme: jekyll-theme-cayman
-gems:
-  - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
