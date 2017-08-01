@@ -53,7 +53,8 @@ theme: minima
 
 highlighter: rouge
 excerpt_separator: "\n\n"
-  
+
+#Google analytics parameter
 analytics:
     google:
     tracking_id: UA-80557370-2
