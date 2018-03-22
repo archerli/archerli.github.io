@@ -37,6 +37,7 @@ ga('send', 'pageview');
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="css/style.css">
+  
 </head>
 
 <body>
@@ -75,6 +76,55 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-How-to-install-JDK-on-Ubuntu-CVM" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="2018/03/22/How-to-install-JDK-on-Ubuntu-CVM/" class="article-date">
+  <time datetime="2018-03-22T01:50:52.000Z" itemprop="datePublished">2018-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="categories/Manual/">Manual</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2018/03/22/How-to-install-JDK-on-Ubuntu-CVM/">How to install JDK on Ubuntu Cloud VM quickly</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-添加apt-get-的repository源"><a href="#1-添加apt-get-的repository源" class="headerlink" title="1. 添加apt-get 的repository源"></a>1. 添加apt-get 的repository源</h2><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:webupd8team/java</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h2 id="2-安装Oracle-Java-Installer"><a href="#2-安装Oracle-Java-Installer" class="headerlink" title="2. 安装Oracle Java Installer"></a>2. 安装Oracle Java Installer</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install oracle-java8-installer</span><br></pre></td></tr></table></figure>
+<p>系统会将installer 默认下载到以下位置。</p>
+<blockquote>
+<p>/var/cache/oracle-java8-installer</p>
+</blockquote>
+<h2 id="3-设置安装的JDK为系统默认JDK"><a href="#3-设置安装的JDK为系统默认JDK" class="headerlink" title="3. 设置安装的JDK为系统默认JDK"></a>3. 设置安装的JDK为系统默认JDK</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">update</span>-<span class="keyword">java</span>-alternatives -s <span class="keyword">java</span><span class="number">-7</span>-<span class="keyword">oracle</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.couldmind.cn/2018/03/22/How-to-install-JDK-on-Ubuntu-CVM/" data-id="cjf1z9mml0000tout92sir1eu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/apt-get/">apt-get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/ubuntu/">ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ReactJS-Learning" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="2018/03/20/ReactJS-Learning/" class="article-date">
@@ -105,7 +155,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.couldmind.cn/2018/03/20/ReactJS-Learning/" data-id="cjf0huqvl0000w8ut1o7yqd91" class="article-share-link">Share</a>
+      <a data-url="http://blog.couldmind.cn/2018/03/20/ReactJS-Learning/" data-id="cjf1z9mmq0001tout9lwxfcpq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -150,7 +200,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.couldmind.cn/2018/03/20/hello-world/" data-id="cjf0huqw00001w8utx2os75k1" class="article-share-link">Share</a>
+      <a data-url="http://blog.couldmind.cn/2018/03/20/hello-world/" data-id="cjf1z9mmv0004toutxgowztbi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +220,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="categories/FrontEnd/">FrontEnd</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="categories/FrontEnd/">FrontEnd</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="categories/Manual/">Manual</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -180,7 +230,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="tags/apt-get/">apt-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -190,7 +240,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      
+      <a href="tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
     </div>
   </div>
 
@@ -199,7 +249,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2018/03/">三月 2018</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -210,6 +260,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="2018/03/22/How-to-install-JDK-on-Ubuntu-CVM/">How to install JDK on Ubuntu Cloud VM quickly</a>
+          </li>
         
           <li>
             <a href="2018/03/20/ReactJS-Learning/">ReactJS Learning</a>
