@@ -81,6 +81,375 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Taro Specs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/05/05/Taro Specs/" class="article-date">
+  <time datetime="2019-05-05T08:08:17.611Z" itemprop="datePublished">2019-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Taro-Specs"><a href="#Taro-Specs" class="headerlink" title="Taro Specs"></a>Taro Specs</h1><h3 id="1-文件夹规范"><a href="#1-文件夹规范" class="headerlink" title="1. 文件夹规范"></a>1. 文件夹规范</h3><p>— 入口文件为 <em>app.js</em></p>
+<p>— 页面文件放在<em>src/pages</em>目录下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-- config</span><br><span class="line">	|-- dev.js</span><br><span class="line">	|-- index.js</span><br><span class="line">	|-- prod.js</span><br><span class="line">-- src</span><br><span class="line">	|-- components</span><br><span class="line">	|		|-- ComponentName</span><br><span class="line">	|-- pages</span><br><span class="line">	|		|-- index</span><br><span class="line">	|		|			|-- banner</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/05/05/Taro Specs/" data-id="cjvanuecp00064j11f4yhubcf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Taro-Best-Practices-Notes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/05/05/Taro-Best-Practices-Notes/" class="article-date">
+  <time datetime="2019-05-05T04:34:10.680Z" itemprop="datePublished">2019-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Taro-Best-Practices-Notes"><a href="#Taro-Best-Practices-Notes" class="headerlink" title="Taro Best Practices Notes"></a>Taro Best Practices Notes</h1><h4 id="1-不能在包含JSX-元素的-map-循环中使用-if-表达式"><a href="#1-不能在包含JSX-元素的-map-循环中使用-if-表达式" class="headerlink" title="1. 不能在包含JSX 元素的 map 循环中使用 if 表达式"></a>1. 不能在包含<em>JSX</em> 元素的 map 循环中使用 if 表达式</h4><h4 id="2-不能在Array-map-之外的方法中操作-JSX-数组"><a href="#2-不能在Array-map-之外的方法中操作-JSX-数组" class="headerlink" title="2. 不能在Array.map 之外的方法中操作 JSX 数组"></a>2. 不能在Array.map 之外的方法中操作 JSX 数组</h4><h4 id="3-不能在JSX参数中使用匿名函数"><a href="#3-不能在JSX参数中使用匿名函数" class="headerlink" title="3. 不能在JSX参数中使用匿名函数"></a>3. 不能在JSX参数中使用匿名函数</h4><h4 id="4-不支持在render-之外的方法中定义JSX"><a href="#4-不支持在render-之外的方法中定义JSX" class="headerlink" title="4.不支持在render() 之外的方法中定义JSX"></a>4.不支持在render() 之外的方法中定义JSX</h4><blockquote>
+<p>所有的JSX定义，都要写在 render()中</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&gt; render()&#123;</span><br><span class="line">&gt;   <span class="keyword">const</span> header = &lt;View&gt;&lt;Text&gt;Header&lt;/Text&gt;&lt;/View&gt;;</span><br><span class="line">&gt;   <span class="keyword">const</span> &#123;showHeader&#125; = <span class="keyword">this</span>.state</span><br><span class="line">&gt;   </span><br><span class="line">&gt;   <span class="keyword">return</span> (</span><br><span class="line">&gt;   	&lt;View&gt;</span><br><span class="line">&gt;     	&#123;</span><br><span class="line">&gt;         showHeader&amp;&amp;header</span><br><span class="line">&gt;       &#125;</span><br><span class="line">&gt;       &lt;View&gt;</span><br><span class="line">&gt;       	&lt;Text&gt;Body&lt;/Text&gt;</span><br><span class="line">&gt;       &lt;/View&gt;</span><br><span class="line">&gt;     &lt;/View&gt;</span><br><span class="line">&gt;   )</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+</blockquote>
+<h4 id="5-不要再JSX的参数-props-中使用对象展开操作符"><a href="#5-不要再JSX的参数-props-中使用对象展开操作符" class="headerlink" title="5. 不要再JSX的参数(props)中使用对象展开操作符"></a>5. 不要再JSX的参数(props)中使用对象展开操作符</h4><h4 id="6-不支持无状态组件"><a href="#6-不支持无状态组件" class="headerlink" title="6. 不支持无状态组件"></a>6. 不支持无状态组件</h4><h4 id="7-自定义组件样式不能受外部样式影响"><a href="#7-自定义组件样式不能受外部样式影响" class="headerlink" title="7.自定义组件样式不能受外部样式影响"></a>7.自定义组件样式不能受外部样式影响</h4><blockquote>
+<p>即不要给自定义组件添加 className 或者 style 属性以期望控制自定义组件的展示</p>
+</blockquote>
+<h4 id="8-给自定义的组件设置-defaultProps-和-propTypes"><a href="#8-给自定义的组件设置-defaultProps-和-propTypes" class="headerlink" title="8.给自定义的组件设置 defaultProps 和 propTypes"></a>8.给自定义的组件设置 defaultProps 和 propTypes</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;h1&gt; Hello, &#123;<span class="keyword">this</span>.props.name&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">		);</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">CustomComponent.propTypes = &#123;</span></span><br><span class="line"><span class="regexp">	name: PropTypes.String</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">CustomComponent.defaultProps = &#123;</span></span><br><span class="line"><span class="regexp">	name: null</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br></pre></td></tr></table></figure>
+<p>####9.组件传递函数属性以 <strong>on</strong> 开头</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">Class Parent extends Component &#123;</span><br><span class="line">	handleEvent()&#123;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	render()&#123;</span><br><span class="line">		<span class="keyword">return</span>(</span><br><span class="line">			&lt;CustomChild </span><br><span class="line">        onTrigger=&#123;<span class="keyword">this</span>.handleEvent.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">        renderHeader=&#123;&lt;JSX &gt;&lt;/JS&gt;&#125;</span><br><span class="line">        &gt;</span><br><span class="line">			&lt;<span class="regexp">/CustomChild&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="10-不要在组件中打印传入的函数"><a href="#10-不要在组件中打印传入的函数" class="headerlink" title="10.不要在组件中打印传入的函数"></a>10.不要在组件中打印传入的函数</h4><h4 id="11-不要将在模板中用到的数据设置为-undefined"><a href="#11-不要将在模板中用到的数据设置为-undefined" class="headerlink" title="11.不要将在模板中用到的数据设置为 undefined"></a>11.不要将在模板中用到的数据设置为 undefined</h4><blockquote>
+<p>如果某个数据不使用了，可以设置成 <strong>null</strong></p>
+</blockquote>
+<h4 id="12-不要在组件中打印-this-props-chidren"><a href="#12-不要在组件中打印-this-props-chidren" class="headerlink" title="12.不要在组件中打印 this.props.chidren"></a>12.不要在组件中打印 this.props.chidren</h4><h4 id="13-props中可以传入JSX"><a href="#13-props中可以传入JSX" class="headerlink" title="13. props中可以传入JSX"></a>13. props中可以传入JSX</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">组件传入的JSX的属性名必须以 render 开头</span><br></pre></td></tr></table></figure>
+<h4 id="14-属性值不能以-id，class，style-为名称"><a href="#14-属性值不能以-id，class，style-为名称" class="headerlink" title="14. 属性值不能以 id，class，style 为名称"></a>14. 属性值不能以 id，class，style 为名称</h4><h4 id="15-state-和-props-的字段不能重名"><a href="#15-state-和-props-的字段不能重名" class="headerlink" title="15. state 和 props 的字段不能重名"></a>15. state 和 props 的字段不能重名</h4><h4 id="16-生命周期差异"><a href="#16-生命周期差异" class="headerlink" title="16.生命周期差异"></a>16.生命周期差异</h4><p>— 在componentWillMount() 中即 onLoad 的时候才能拿到路由</p>
+<p>— 子组件的 <strong>constructor</strong> 和 <strong>render</strong> 初始化时会被提前调用一次</p>
+<h4 id="17-JS编码必须使用单引号"><a href="#17-JS编码必须使用单引号" class="headerlink" title="17. JS编码必须使用单引号"></a>17. JS编码必须使用单引号</h4><h4 id="18-环境变量需要直接使用-process-env"><a href="#18-环境变量需要直接使用-process-env" class="headerlink" title="18. 环境变量需要直接使用 process.env"></a>18. 环境变量需要直接使用 process.env</h4><h4 id="19-页面跳转时，在-componentWillMount-前可以通过预加载拿到参数进行页面请求"><a href="#19-页面跳转时，在-componentWillMount-前可以通过预加载拿到参数进行页面请求" class="headerlink" title="19. 页面跳转时，在 componentWillMount() 前可以通过预加载拿到参数进行页面请求"></a>19. 页面跳转时，在 componentWillMount() 前可以通过预加载拿到参数进行页面请求</h4><blockquote>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&gt; <span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">&gt;   </span><br><span class="line">&gt;   <span class="comment">// Step 1.</span></span><br><span class="line">&gt;   componentWillPreload(params) &#123;</span><br><span class="line">&gt;     <span class="comment">// Step 2.</span></span><br><span class="line">&gt;     <span class="keyword">return</span> <span class="keyword">this</span>.fetchData(params.url)</span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt;   </span><br><span class="line">&gt;   <span class="comment">// Method Define</span></span><br><span class="line">&gt;   fetchData () &#123;</span><br><span class="line">&gt;     <span class="keyword">this</span>.isFetching = <span class="literal">true</span></span><br><span class="line">&gt;     </span><br><span class="line">&gt;   &#125;</span><br><span class="line">&gt;   </span><br><span class="line">&gt;   <span class="comment">// Step 3.</span></span><br><span class="line">&gt; 	componentWillMount()&#123;</span><br><span class="line">&gt;     <span class="built_in">console</span>.log(<span class="string">'is Fetching: '</span>, <span class="keyword">this</span>.isFetching)</span><br><span class="line">&gt;     <span class="keyword">this</span>.$preloadData</span><br><span class="line">&gt;     	.then( <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">&gt;       	<span class="built_in">console</span>.log( <span class="string">'res'</span>, res)</span><br><span class="line">&gt;       	<span class="keyword">this</span>.isFetching = <span class="literal">false</span></span><br><span class="line">&gt;     &#125;)</span><br><span class="line">&gt;   &#125;  </span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<ol>
+<li>通过<em>componentWillPreload</em>接收页面跳转参数作为参数;</li>
+<li>在<em>componentWillPreload</em> 中通过 return 将需要加载的内容返回;</li>
+<li>在页面中触发 <em>componentWillMount</em>, 然后通过 <strong>this.$preloadData</strong> 获取到预加载的内容，然后再处理数据;</li>
+</ol>
+</blockquote>
+<h4 id="20-使用this-preload-函数进行页面跳转传参数"><a href="#20-使用this-preload-函数进行页面跳转传参数" class="headerlink" title="20. 使用this.$preload 函数进行页面跳转传参数"></a>20. 使用<strong>this.$preload</strong> 函数进行页面跳转传参数</h4><blockquote>
+<p>使用 this.$preload 可以传入单个参数也可以传入多个参数</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.$preload(<span class="string">'key'</span>, <span class="string">'val'</span>)</span><br><span class="line">Taro.navigateTo(&#123; <span class="attr">url</span>: <span class="string">'/pages/B/B'</span>&#125;)</span><br><span class="line"></span><br><span class="line">componentWillMount()&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'preload: '</span>, <span class="keyword">this</span>.$router.preload.key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.$preload(&#123;</span><br><span class="line">	x: <span class="number">1</span>,</span><br><span class="line">	y: <span class="number">2</span></span><br><span class="line">&#125;)</span><br><span class="line">Taro.navigateTo(&#123; <span class="attr">url</span>: <span class="string">'/pages/B/B'</span>&#125;)</span><br><span class="line"></span><br><span class="line">componentWillMount()&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'preload:'</span>, <span class="keyword">this</span>.$router.preload)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="21-使用PurComponent减少不必要的渲染"><a href="#21-使用PurComponent减少不必要的渲染" class="headerlink" title="21. 使用PurComponent减少不必要的渲染"></a>21. 使用PurComponent减少不必要的渲染</h4><figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">Taro</span>.<span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/05/05/Taro-Best-Practices-Notes/" data-id="cjvanuecw000d4j1188nfuixl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Flutter Widgets" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/05/01/Flutter Widgets/" class="article-date">
+  <time datetime="2019-05-01T09:19:34.508Z" itemprop="datePublished">2019-05-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Flutter-Widgets"><a href="#Flutter-Widgets" class="headerlink" title="Flutter Widgets -"></a>Flutter Widgets -</h1><h2 id="Basic-Widget"><a href="#Basic-Widget" class="headerlink" title="Basic Widget"></a>Basic Widget</h2><h3 id="Container"><a href="#Container" class="headerlink" title="Container"></a>Container</h3><blockquote>
+<p>​    1. Container </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">alignment</td>
+<td>AlignmentGeometry</td>
+<td></td>
+<td>Align the child within the container.</td>
+</tr>
+<tr>
+<td style="text-align:left">constraints</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">decoration</td>
+<td>Decoration</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">foregroundDecoration</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">margin</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">padding</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">transform</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">child</td>
+<td>Widget</td>
+<td></td>
+<td>被Container 包含的子Widget</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Row"><a href="#Row" class="headerlink" title="Row"></a>Row</h3><h3 id="Column"><a href="#Column" class="headerlink" title="Column"></a>Column</h3><h3 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h3><h3 id="Text"><a href="#Text" class="headerlink" title="Text"></a>Text</h3><h3 id="Icon"><a href="#Icon" class="headerlink" title="Icon"></a>Icon</h3><h3 id="RaisedButton"><a href="#RaisedButton" class="headerlink" title="RaisedButton"></a>RaisedButton</h3><h3 id="Scaffold"><a href="#Scaffold" class="headerlink" title="Scaffold"></a>Scaffold</h3><h3 id="Appbar"><a href="#Appbar" class="headerlink" title="Appbar"></a>Appbar</h3><h3 id="FlutterLogo"><a href="#FlutterLogo" class="headerlink" title="FlutterLogo"></a>FlutterLogo</h3><h3 id="Placeholder"><a href="#Placeholder" class="headerlink" title="Placeholder"></a>Placeholder</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/05/01/Flutter Widgets/" data-id="cjvanuecc00004j11u3bmwc34" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-StatefulWidget vs StatelessWidget" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/04/27/StatefulWidget vs StatelessWidget/" class="article-date">
+  <time datetime="2019-04-27T15:47:19.603Z" itemprop="datePublished">2019-04-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="StatefulWidget-vs-StatelessWidget"><a href="#StatefulWidget-vs-StatelessWidget" class="headerlink" title="StatefulWidget vs StatelessWidget"></a>StatefulWidget vs StatelessWidget</h1><p><strong>StatefulWidget</strong> 是指自身会有状态变化的组件。</p>
+<blockquote>
+<p>例如，系统提供的 <em>Checkbox</em>, <em>Radio</em>, <em>Slider</em>, <em>Form</em>, <em>TextField</em></p>
+</blockquote>
+<p><strong>StatelessWidget</strong> 是指自身内部不会有状态变化的组件。</p>
+<blockquote>
+<p>例如，系统提供的无状态的组件有 <em>Icon</em>, <em>IconButton</em>, <em>Text</em></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/04/27/StatefulWidget vs StatelessWidget/" data-id="cjvanuecr00074j119j6c24gi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Dart In Flutter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/04/21/Dart In Flutter/" class="article-date">
+  <time datetime="2019-04-21T03:41:39.470Z" itemprop="datePublished">2019-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Dart-In-Flutter"><a href="#Dart-In-Flutter" class="headerlink" title="Dart In Flutter"></a>Dart In Flutter</h1><h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><ol>
+<li>var 声明变量时不用指定变量可以接受的数据类型</li>
+<li>编译时，第一次给 var 声明的变量赋值时来推断 var 变量的类型</li>
+<li>var 声明的变量类型一经指定后，不可以再修改其变量类型</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> t;</span><br><span class="line">t = <span class="string">"hello world"</span>;</span><br><span class="line">t = <span class="number">1000</span>; <span class="comment">// ❌</span></span><br></pre></td></tr></table></figure>
+<h3 id="dynamic"><a href="#dynamic" class="headerlink" title="dynamic"></a>dynamic</h3><h2 id="Widget-类型"><a href="#Widget-类型" class="headerlink" title="Widget 类型"></a>Widget 类型</h2><p>Widget 分为 <strong>有状态的widget(Stateful widget) </strong> 和 <strong>无状态的widget(Stateless widget) </strong>,他们的差别点在于:</p>
+<ol>
+<li>Stateful widget 可以拥有状态，即在该类widget的生命周期中，其拥有的状态是可以改变的;</li>
+<li>Stateless widget在其生命周期中是不可以改变的;</li>
+<li>Stateful widget 至少由两个类组成:<ul>
+<li>StatefulWidget 类: 声明某个继承StatefulWidget的类</li>
+<li>State类：状态类，在Widget的生命周期中可能发生变化</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  MyHomePage(&#123;Key key, <span class="keyword">this</span>.title&#125;): <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> title;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _MyHomePageState createState() =&gt; <span class="keyword">new</span> _MyHomePageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MyHomePageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyHomePage</span>&gt; </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>StatefulWidget 的构建</p>
+<ol>
+<li>构建 <strong>StatefulWidget</strong> </li>
+<li>创建 <strong>State</strong> 类</li>
+<li>初始化<em>Widget</em></li>
+<li>调用<strong>Widget</strong>的 <strong>build</strong> 方法构建 widget 树</li>
+<li>将 widget树显示到屏幕上</li>
+</ol>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/04/21/Dart In Flutter/" data-id="cjvanueck00024j115okkjf4n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Taro-Page-Structrue" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/04/19/Taro-Page-Structrue/" class="article-date">
+  <time datetime="2019-04-19T04:24:27.732Z" itemprop="datePublished">2019-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  config = &#123;</span><br><span class="line">    navigationBarBackgroundColor: <span class="string">'#000000'</span>,</span><br><span class="line">    navigationBarTextStyle: <span class="string">'white/black'</span>,</span><br><span class="line">    navigationBarTitleText: <span class="string">'页面标题'</span>,</span><br><span class="line">    navigationStyle: <span class="string">'default/custom'</span>,</span><br><span class="line">    backgroundColor: <span class="string">'#ffffff'</span>,</span><br><span class="line">    backgroundTextStyle: <span class="string">'dark/light'</span>,</span><br><span class="line">    backgroundColorTop: <span class="string">'#ffffff'</span>,</span><br><span class="line">    backgroundColorBottom: <span class="string">'#ffffff'</span>,</span><br><span class="line">    enablePullDownRefresh: <span class="literal">false</span>,</span><br><span class="line">    onReachBottomDistance: <span class="number">50</span>,</span><br><span class="line">    pageOrientation: <span class="string">'auto/portrait/landscape'</span>,</span><br><span class="line">    disableScroll: <span class="literal">false</span>,</span><br><span class="line">    disableSwiperBack: <span class="literal">false</span>,</span><br><span class="line">    usingComponents: &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">componentWillMount()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentDidMount()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillUpdate(nextProps, nextState)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentDidUpdate(prevProps, prevState)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillUnmount()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentDidShow()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentDidHide()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	const &#123;&#125; = this.$router.params</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">onPullDownRefresh()&#123;</span><br><span class="line">  </span><br><span class="line">  Taro.startPullDownRefresh()</span><br><span class="line">  </span><br><span class="line">  Taro.stopPullDownRefresh()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onReachBottom()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onPageScroll(<span class="built_in">Object</span>)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onShareAppMessage(<span class="built_in">Object</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;<span class="keyword">from</span>, target, webViewUrl&#125; = <span class="built_in">Object</span></span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    title: <span class="string">''</span>,</span><br><span class="line">    path: <span class="string">''</span>,</span><br><span class="line">    imageUrl: <span class="string">''</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onResize(object)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">onTabItemTab(object)&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;index, pagePath, text&#125; = object</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentWillPreload()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/04/19/Taro-Page-Structrue/" data-id="cjvanued1000f4j11of2ppbc3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Taro-App-Structure" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/04/19/Taro-App-Structure/" class="article-date">
+  <time datetime="2019-04-19T03:25:52.399Z" itemprop="datePublished">2019-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Taro, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'@tarojs/taro'</span></span><br><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">'./pages/index'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./app.scss'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  config = &#123;</span><br><span class="line">    pages: [</span><br><span class="line">      <span class="string">'pages/index/index'</span>,</span><br><span class="line">      <span class="string">'pages/me/index'</span>,</span><br><span class="line">      <span class="string">'pages/category/index'</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="built_in">window</span>: &#123;</span><br><span class="line">      navigationBarBackgroundColor: <span class="string">'#000000'</span>,</span><br><span class="line">      backgroundTextStyle: <span class="string">'light'</span>,</span><br><span class="line">      navigationBarBackgroundColor: <span class="string">'#fff'</span>,</span><br><span class="line">      navigationBarTitleText: <span class="string">'application name'</span>,</span><br><span class="line">      navigationBarTextStyle: <span class="string">'black'</span>,</span><br><span class="line">      navigationStyle: <span class="string">'default/custom'</span>,</span><br><span class="line">      backgroundTextStyle: <span class="string">'dark/light'</span>,</span><br><span class="line">      backgroundColorTop: <span class="string">'#ffffff'</span>,</span><br><span class="line">      backgroundColorBottom: <span class="string">'#ffffff'</span>,</span><br><span class="line">      enablePullDownRefresh: <span class="literal">true</span>,</span><br><span class="line">      onReachBottomDistance: <span class="number">50</span>,</span><br><span class="line">      pageOrientation: <span class="string">'auto/portrait/landscape'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    tabBar: &#123;</span><br><span class="line">      color: <span class="string">'#aabbcc'</span>,</span><br><span class="line">      selectedColor: <span class="string">'#ffffff'</span>,</span><br><span class="line">      backgroundColor: <span class="string">'#000000'</span>,</span><br><span class="line">      borderStyle: <span class="string">'black/white'</span>,</span><br><span class="line">      list: [</span><br><span class="line">        &#123;</span><br><span class="line">          pagePath: <span class="string">'/pages/index/index'</span>,</span><br><span class="line">          text: <span class="string">'home'</span>,</span><br><span class="line">          iconPath: <span class="string">''</span>,	<span class="comment">// max 40kb, 81px*81px</span></span><br><span class="line">          selectedIconPath: <span class="string">''</span>, <span class="comment">// max 40kb, 81px*81px</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      postion: <span class="string">'bottom/top'</span>,</span><br><span class="line">      custom: <span class="literal">true</span>/<span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    networkTimeout: &#123;</span><br><span class="line">      request: <span class="number">60000</span>,					<span class="comment">// Taro.request</span></span><br><span class="line">      connectSocket: <span class="number">60000</span>,		<span class="comment">// Taro.connectSocket</span></span><br><span class="line">      uploadFile: <span class="number">60000</span>,			<span class="comment">// Taro.uploadFile</span></span><br><span class="line">      downloadFile: <span class="number">60000</span>			<span class="comment">// Taro.downloadFile</span></span><br><span class="line">    &#125;,</span><br><span class="line">    debug: <span class="literal">true</span>,</span><br><span class="line">    functionalPages: <span class="literal">true</span>,</span><br><span class="line">    subPackages: [</span><br><span class="line">    ],</span><br><span class="line">    workers: <span class="string">'/worker/path/'</span>,</span><br><span class="line">    requiredBackgroundModes: [<span class="string">'sound'</span>],</span><br><span class="line">    plugins: &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;,</span><br><span class="line">    preloadRule: &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;,</span><br><span class="line">    resizable: <span class="literal">true</span>,</span><br><span class="line">    navigateToMiniProgramAppIdList: [</span><br><span class="line">      <span class="string">'appid001'</span>,<span class="string">'appid02'</span></span><br><span class="line">    ],</span><br><span class="line">    usingComponents: &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;,</span><br><span class="line">    permission:&#123;</span><br><span class="line">      <span class="string">'scope.userLocation'</span>: &#123;</span><br><span class="line">        desc: <span class="string">'你的位置信息将用于小程序接口的效果展示'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">componentWillMount()&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;path, scene, query, shareTicket, referrerInfo&#125; = <span class="keyword">this</span>.$router.params</span><br><span class="line">  <span class="keyword">const</span> &#123;appId, extraData, sourceServiceId&#125; = referrerInfo</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentDidMount()&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;path, scene, query, shareTicket, referrerInfo&#125; = <span class="keyword">this</span>.$router.params</span><br><span class="line">  <span class="keyword">const</span> &#123;appId, extraData, sourceServiceId&#125; = referrerInfo</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应小程序的 onShow()</span></span><br><span class="line">componentDidShow()&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;path, scene, query, shareTicket, referrerInfo&#125; = <span class="keyword">this</span>.$router.params</span><br><span class="line">  <span class="keyword">const</span> &#123;appId, extraData, sourceServiceId&#125; = referrerInfo</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应小程序 onHide()</span></span><br><span class="line">componentDidHide()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应小程序的 onError()</span></span><br><span class="line">componentDidCatchError(<span class="built_in">String</span> error)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应小程序的 onPageNotFound()</span></span><br><span class="line">componentDidNotFound(<span class="built_in">Object</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;path, query, isEntryPage&#125; = <span class="built_in">Object</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/04/19/Taro-App-Structure/" data-id="cjvanuecu000b4j11zqx12ktv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-taro-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/04/19/taro-tips/" class="article-date">
+  <time datetime="2019-04-19T02:36:04.651Z" itemprop="datePublished">2019-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Taro-Tips"><a href="#Taro-Tips" class="headerlink" title="Taro Tips"></a>Taro Tips</h1><h3 id="DO-NOT-DO-IT"><a href="#DO-NOT-DO-IT" class="headerlink" title="DO NOT DO IT"></a>DO NOT DO IT</h3><p>— Do not use <strong>class</strong> / <strong>id</strong> / <strong>style</strong> as component property name</p>
+<p>— Do not use HTML tag in Taro</p>
+<p>— Do not use <em>this.state</em> in <strong>this.setState</strong></p>
+<p>— Avoid call <strong>this.setState</strong> in componentDidMount</p>
+<p>— Do not call <strong>this.setState</strong> in componentWillUpdate/componentDidUpdate/render</p>
+<p>— Do not define the unused state</p>
+<p>— Do not use anonymous function in JSX</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;View onClick=&#123;<span class="keyword">this</span>.handleClick&#125; /&gt;</span><br><span class="line">&lt;View onClick=&#123;<span class="keyword">this</span>.handleClick.bind(<span class="keyword">this</span>)&#125; /&gt;</span><br><span class="line">&lt;View onClick=&#123;<span class="keyword">this</span>.props.handleClick&#125; /&gt;</span><br><span class="line">&lt;View onClick=&#123;<span class="keyword">this</span>.props.handleClick.bind(<span class="keyword">this</span>)&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>Below Code can not work</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;View onClick=&#123;() =&gt; <span class="keyword">this</span>.handleClick()&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;View onClick=&#123;(e) =&gt; <span class="keyword">this</span>.handleClick(e)&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;View onClick=&#123;() =&gt; (&#123;&#125;)&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;View onClick=&#123;<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;View onClick=&#123;<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;<span class="keyword">this</span>.handleClick(e)&#125;&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;Custom child=&#123;&lt;View /&gt;&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;Custom child=&#123;() =&gt; &lt;View /&gt;&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;Custom child=&#123;function () &#123; &lt;View /&gt; &#125;&#125; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;Custom child=&#123;ary.map(a =&gt; &lt;View /&gt;)&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>— Do not use object spread operator in JSX</p>
+<p>— Do not use non functional component</p>
+<h3 id="DO-IT-in-Taro"><a href="#DO-IT-in-Taro" class="headerlink" title="DO IT in Taro"></a>DO IT in Taro</h3><p>— Assign <em>key</em> when you use <strong>map</strong> loop</p>
+<p>— It is better to define <strong>defaultProps</strong></p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComponentName</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">  <span class="keyword">static</span> defaultProps = &#123;</span><br><span class="line">    propName: propValue,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>— Must return in <strong>render()</strong></p>
+<p>— PLEASE use <strong>on</strong> as prefix for component event property</p>
+<figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line">&lt;View className=<span class="string">'container'</span> onClick=&#123;<span class="keyword">this</span>.handleClick&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>— It is better to use <strong>map</strong> to operate Array</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/04/19/taro-tips/" data-id="cjvanued3000i4j119o7209ns" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-native-base-component-interface-and-props" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="https://archerli.github.io/2018/10/03/native-base-component-interface-and-props/" class="article-date">
@@ -112,7 +481,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://archerli.github.io/2018/10/03/native-base-component-interface-and-props/" data-id="cjmsr06nw000bqt11nmuwvbet" class="article-share-link">Share</a>
+      <a data-url="https://archerli.github.io/2018/10/03/native-base-component-interface-and-props/" data-id="cjvanuee5000j4j113w9f0br6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,7 +528,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://archerli.github.io/2018/03/22/How-to-install-JDK-on-Ubuntu-CVM/" data-id="cjmsr06n20001qt1182pnvkgl" class="article-share-link">Share</a>
+      <a data-url="https://archerli.github.io/2018/03/22/How-to-install-JDK-on-Ubuntu-CVM/" data-id="cjvanuech00014j11ibuqq9vk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apt-get/">apt-get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
@@ -171,92 +540,12 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-ReactJS-Learning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="https://archerli.github.io/2018/03/20/ReactJS-Learning/" class="article-date">
-  <time datetime="2018-03-20T15:42:14.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/FrontEnd/">FrontEnd</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="https://archerli.github.io/2018/03/20/ReactJS-Learning/">ReactJS Learning</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://archerli.github.io/2018/03/20/ReactJS-Learning/" data-id="cjmsr06n50002qt119xwncml9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="https://archerli.github.io/2018/03/20/hello-world/" class="article-date">
-  <time datetime="2018-03-20T14:56:37.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="https://archerli.github.io/2018/03/20/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://archerli.github.io/2018/03/20/hello-world/" data-id="cjmsr06mu0000qt11yk1g5bfn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
 
 </section>
         
@@ -295,7 +584,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -308,19 +597,23 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="https://archerli.github.io/2018/10/03/native-base-component-interface-and-props/">native-base component interface and props</a>
+            <a href="https://archerli.github.io/2019/05/05/Taro Specs/">(no title)</a>
           </li>
         
           <li>
-            <a href="https://archerli.github.io/2018/03/22/How-to-install-JDK-on-Ubuntu-CVM/">How to install JDK on Ubuntu Cloud VM quickly</a>
+            <a href="https://archerli.github.io/2019/05/05/Taro-Best-Practices-Notes/">(no title)</a>
           </li>
         
           <li>
-            <a href="https://archerli.github.io/2018/03/20/ReactJS-Learning/">ReactJS Learning</a>
+            <a href="https://archerli.github.io/2019/05/01/Flutter Widgets/">(no title)</a>
           </li>
         
           <li>
-            <a href="https://archerli.github.io/2018/03/20/hello-world/">Hello World</a>
+            <a href="https://archerli.github.io/2019/04/27/StatefulWidget vs StatelessWidget/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="https://archerli.github.io/2019/04/21/Dart In Flutter/">(no title)</a>
           </li>
         
       </ul>
@@ -335,7 +628,7 @@ ga('send', 'pageview');
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 Archer Li<br>
+      &copy; 2019 Archer Li<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

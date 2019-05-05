@@ -18,18 +18,21 @@ ga('send', 'pageview');
 
 
   
-  <title>ReactJS Learning | Learning World</title>
+  <title>Learning World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="ReactJS Learning">
-<meta property="og:url" content="https://archerli.github.io/2018/03/20/ReactJS-Learning/index.html">
+  <meta name="description" content="Dart In Flutter变量声明var var 声明变量时不用指定变量可以接受的数据类型 编译时，第一次给 var 声明的变量赋值时来推断 var 变量的类型 var 声明的变量类型一经指定后，不可以再修改其变量类型  var t;t = &quot;hello world&quot;;t = 1000; // ❌ dynamicWidget 类型Widget 分为 有状态的widget(Stateful wi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning World">
+<meta property="og:url" content="https://archerli.github.io/2019/04/21/Dart In Flutter/index.html">
 <meta property="og:site_name" content="Learning World">
+<meta property="og:description" content="Dart In Flutter变量声明var var 声明变量时不用指定变量可以接受的数据类型 编译时，第一次给 var 声明的变量赋值时来推断 var 变量的类型 var 声明的变量类型一经指定后，不可以再修改其变量类型  var t;t = &quot;hello world&quot;;t = 1000; // ❌ dynamicWidget 类型Widget 分为 有状态的widget(Stateful wi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-21T03:50:09.000Z">
+<meta property="og:updated_time" content="2019-05-01T07:37:48.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ReactJS Learning">
+<meta name="twitter:title" content="Learning World">
+<meta name="twitter:description" content="Dart In Flutter变量声明var var 声明变量时不用指定变量可以接受的数据类型 编译时，第一次给 var 声明的变量赋值时来推断 var 变量的类型 var 声明的变量类型一经指定后，不可以再修改其变量类型  var t;t = &quot;hello world&quot;;t = 1000; // ❌ dynamicWidget 类型Widget 分为 有状态的widget(Stateful wi">
   
-    <link rel="alternate" href="https://archerli.github.io/2018/03/20/ReactJS-Learning/" title="Learning World" type="application/atom+xml">
+    <link rel="alternate" href="https://archerli.github.io/2019/04/21/Dart In Flutter/" title="Learning World" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -80,37 +83,50 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ReactJS-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Dart In Flutter" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="https://archerli.github.io/2018/03/20/ReactJS-Learning/" class="article-date">
-  <time datetime="2018-03-20T15:42:14.000Z" itemprop="datePublished">2018-03-20</time>
+    <a href="https://archerli.github.io/2019/04/21/Dart In Flutter/" class="article-date">
+  <time datetime="2019-04-21T03:41:39.470Z" itemprop="datePublished">2019-04-21</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/FrontEnd/">FrontEnd</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      ReactJS Learning
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Dart-In-Flutter"><a href="#Dart-In-Flutter" class="headerlink" title="Dart In Flutter"></a>Dart In Flutter</h1><h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><ol>
+<li>var 声明变量时不用指定变量可以接受的数据类型</li>
+<li>编译时，第一次给 var 声明的变量赋值时来推断 var 变量的类型</li>
+<li>var 声明的变量类型一经指定后，不可以再修改其变量类型</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> t;</span><br><span class="line">t = <span class="string">"hello world"</span>;</span><br><span class="line">t = <span class="number">1000</span>; <span class="comment">// ❌</span></span><br></pre></td></tr></table></figure>
+<h3 id="dynamic"><a href="#dynamic" class="headerlink" title="dynamic"></a>dynamic</h3><h2 id="Widget-类型"><a href="#Widget-类型" class="headerlink" title="Widget 类型"></a>Widget 类型</h2><p>Widget 分为 <strong>有状态的widget(Stateful widget) </strong> 和 <strong>无状态的widget(Stateless widget) </strong>,他们的差别点在于:</p>
+<ol>
+<li>Stateful widget 可以拥有状态，即在该类widget的生命周期中，其拥有的状态是可以改变的;</li>
+<li>Stateless widget在其生命周期中是不可以改变的;</li>
+<li>Stateful widget 至少由两个类组成:<ul>
+<li>StatefulWidget 类: 声明某个继承StatefulWidget的类</li>
+<li>State类：状态类，在Widget的生命周期中可能发生变化</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHomePage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  MyHomePage(&#123;Key key, <span class="keyword">this</span>.title&#125;): <span class="keyword">super</span>(key: key);</span><br><span class="line">  <span class="keyword">final</span> <span class="built_in">String</span> title;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _MyHomePageState createState() =&gt; <span class="keyword">new</span> _MyHomePageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MyHomePageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyHomePage</span>&gt; </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>StatefulWidget 的构建</p>
+<ol>
+<li>构建 <strong>StatefulWidget</strong> </li>
+<li>创建 <strong>State</strong> 类</li>
+<li>初始化<em>Widget</em></li>
+<li>调用<strong>Widget</strong>的 <strong>build</strong> 方法构建 widget 树</li>
+<li>将 widget树显示到屏幕上</li>
+</ol>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://archerli.github.io/2018/03/20/ReactJS-Learning/" data-id="cjvanueco00054j11q6wtfmha" class="article-share-link">Share</a>
+      <a data-url="https://archerli.github.io/2019/04/21/Dart In Flutter/" data-id="cjvanueck00024j115okkjf4n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -119,19 +135,19 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="https://archerli.github.io/2018/03/22/How-to-install-JDK-on-Ubuntu-CVM/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="https://archerli.github.io/2019/04/27/StatefulWidget vs StatelessWidget/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          How to install JDK on Ubuntu Cloud VM quickly
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="https://archerli.github.io/2018/03/20/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="https://archerli.github.io/2019/04/19/Taro-Page-Structrue/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>

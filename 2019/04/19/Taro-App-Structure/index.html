@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89633000-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>Learning World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="import Taro, &amp;#123;Component&amp;#125; from &apos;@tarojs/taro&apos;import Index from &apos;./pages/index&apos;import &apos;./app.scss&apos;class App extends Component &amp;#123;  config = &amp;#123;    pages: [      &apos;pages/index/index&apos;,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning World">
+<meta property="og:url" content="https://archerli.github.io/2019/04/19/Taro-App-Structure/index.html">
+<meta property="og:site_name" content="Learning World">
+<meta property="og:description" content="import Taro, &amp;#123;Component&amp;#125; from &apos;@tarojs/taro&apos;import Index from &apos;./pages/index&apos;import &apos;./app.scss&apos;class App extends Component &amp;#123;  config = &amp;#123;    pages: [      &apos;pages/index/index&apos;,">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-05T08:07:20.316Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learning World">
+<meta name="twitter:description" content="import Taro, &amp;#123;Component&amp;#125; from &apos;@tarojs/taro&apos;import Index from &apos;./pages/index&apos;import &apos;./app.scss&apos;class App extends Component &amp;#123;  config = &amp;#123;    pages: [      &apos;pages/index/index&apos;,">
+  
+    <link rel="alternate" href="https://archerli.github.io/2019/04/19/Taro-App-Structure/" title="Learning World" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="https://archerli.github.io" id="logo">Learning World</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="https://archerli.github.io/">Home</a>
+        
+          <a class="main-nav-link" href="https://archerli.github.io/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="https://archerli.github.io/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://archerli.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Taro-App-Structure" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://archerli.github.io/2019/04/19/Taro-App-Structure/" class="article-date">
+  <time datetime="2019-04-19T03:25:52.399Z" itemprop="datePublished">2019-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight jsx"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Taro, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'@tarojs/taro'</span></span><br><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">'./pages/index'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'./app.scss'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  config = &#123;</span><br><span class="line">    pages: [</span><br><span class="line">      <span class="string">'pages/index/index'</span>,</span><br><span class="line">      <span class="string">'pages/me/index'</span>,</span><br><span class="line">      <span class="string">'pages/category/index'</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="built_in">window</span>: &#123;</span><br><span class="line">      navigationBarBackgroundColor: <span class="string">'#000000'</span>,</span><br><span class="line">      backgroundTextStyle: <span class="string">'light'</span>,</span><br><span class="line">      navigationBarBackgroundColor: <span class="string">'#fff'</span>,</span><br><span class="line">      navigationBarTitleText: <span class="string">'application name'</span>,</span><br><span class="line">      navigationBarTextStyle: <span class="string">'black'</span>,</span><br><span class="line">      navigationStyle: <span class="string">'default/custom'</span>,</span><br><span class="line">      backgroundTextStyle: <span class="string">'dark/light'</span>,</span><br><span class="line">      backgroundColorTop: <span class="string">'#ffffff'</span>,</span><br><span class="line">      backgroundColorBottom: <span class="string">'#ffffff'</span>,</span><br><span class="line">      enablePullDownRefresh: <span class="literal">true</span>,</span><br><span class="line">      onReachBottomDistance: <span class="number">50</span>,</span><br><span class="line">      pageOrientation: <span class="string">'auto/portrait/landscape'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    tabBar: &#123;</span><br><span class="line">      color: <span class="string">'#aabbcc'</span>,</span><br><span class="line">      selectedColor: <span class="string">'#ffffff'</span>,</span><br><span class="line">      backgroundColor: <span class="string">'#000000'</span>,</span><br><span class="line">      borderStyle: <span class="string">'black/white'</span>,</span><br><span class="line">      list: [</span><br><span class="line">        &#123;</span><br><span class="line">          pagePath: <span class="string">'/pages/index/index'</span>,</span><br><span class="line">          text: <span class="string">'home'</span>,</span><br><span class="line">          iconPath: <span class="string">''</span>,	<span class="comment">// max 40kb, 81px*81px</span></span><br><span class="line">          selectedIconPath: <span class="string">''</span>, <span class="comment">// max 40kb, 81px*81px</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      postion: <span class="string">'bottom/top'</span>,</span><br><span class="line">      custom: <span class="literal">true</span>/<span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    networkTimeout: &#123;</span><br><span class="line">      request: <span class="number">60000</span>,					<span class="comment">// Taro.request</span></span><br><span class="line">      connectSocket: <span class="number">60000</span>,		<span class="comment">// Taro.connectSocket</span></span><br><span class="line">      uploadFile: <span class="number">60000</span>,			<span class="comment">// Taro.uploadFile</span></span><br><span class="line">      downloadFile: <span class="number">60000</span>			<span class="comment">// Taro.downloadFile</span></span><br><span class="line">    &#125;,</span><br><span class="line">    debug: <span class="literal">true</span>,</span><br><span class="line">    functionalPages: <span class="literal">true</span>,</span><br><span class="line">    subPackages: [</span><br><span class="line">    ],</span><br><span class="line">    workers: <span class="string">'/worker/path/'</span>,</span><br><span class="line">    requiredBackgroundModes: [<span class="string">'sound'</span>],</span><br><span class="line">    plugins: &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;,</span><br><span class="line">    preloadRule: &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;,</span><br><span class="line">    resizable: <span class="literal">true</span>,</span><br><span class="line">    navigateToMiniProgramAppIdList: [</span><br><span class="line">      <span class="string">'appid001'</span>,<span class="string">'appid02'</span></span><br><span class="line">    ],</span><br><span class="line">    usingComponents: &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;,</span><br><span class="line">    permission:&#123;</span><br><span class="line">      <span class="string">'scope.userLocation'</span>: &#123;</span><br><span class="line">        desc: <span class="string">'你的位置信息将用于小程序接口的效果展示'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">componentWillMount()&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;path, scene, query, shareTicket, referrerInfo&#125; = <span class="keyword">this</span>.$router.params</span><br><span class="line">  <span class="keyword">const</span> &#123;appId, extraData, sourceServiceId&#125; = referrerInfo</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">componentDidMount()&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;path, scene, query, shareTicket, referrerInfo&#125; = <span class="keyword">this</span>.$router.params</span><br><span class="line">  <span class="keyword">const</span> &#123;appId, extraData, sourceServiceId&#125; = referrerInfo</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应小程序的 onShow()</span></span><br><span class="line">componentDidShow()&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;path, scene, query, shareTicket, referrerInfo&#125; = <span class="keyword">this</span>.$router.params</span><br><span class="line">  <span class="keyword">const</span> &#123;appId, extraData, sourceServiceId&#125; = referrerInfo</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应小程序 onHide()</span></span><br><span class="line">componentDidHide()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应小程序的 onError()</span></span><br><span class="line">componentDidCatchError(<span class="built_in">String</span> error)&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对应小程序的 onPageNotFound()</span></span><br><span class="line">componentDidNotFound(<span class="built_in">Object</span>)&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;path, query, isEntryPage&#125; = <span class="built_in">Object</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://archerli.github.io/2019/04/19/Taro-App-Structure/" data-id="cjvanuecu000b4j11zqx12ktv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="https://archerli.github.io/2019/04/19/Taro-Page-Structrue/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="https://archerli.github.io/2019/04/19/taro-tips/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/FrontEnd/">FrontEnd</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Manual/">Manual</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt-get/">apt-get</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/apt-get/" style="font-size: 10px;">apt-get</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://archerli.github.io/2019/05/05/Taro Specs/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="https://archerli.github.io/2019/05/05/Taro-Best-Practices-Notes/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="https://archerli.github.io/2019/05/01/Flutter Widgets/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="https://archerli.github.io/2019/04/27/StatefulWidget vs StatelessWidget/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="https://archerli.github.io/2019/04/21/Dart In Flutter/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Archer Li<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="https://archerli.github.io/" class="mobile-nav-link">Home</a>
+  
+    <a href="https://archerli.github.io/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<!-- Gaug.es Analytics -->
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '5ab333b06eb5fb536400001d');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+<!-- End Gaug.es Analytics -->
+
+
+
+  </div>
+</body>
+</html>
